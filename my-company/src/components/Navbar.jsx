@@ -4,7 +4,9 @@ const linkStyle = {
   margin: '0 10px',
   textDecoration: 'none',
   color: '#333',
-  fontWeight: 'bold'
+  fontWeight: 'bold',
+  justifyContent: 'center',
+  display: 'inline-block',
 };
 
 function Navbar() {
