@@ -5,13 +5,11 @@ const linkStyle = {
   textDecoration: 'none',
   color: '#333',
   fontWeight: 'bold',
-  justifyContent: 'center',
-  display: 'inline-block',
 };
 
 function Navbar() {
   return (
-    <nav style={{ padding: '10px', borderBottom: '1px solid #ccc', backgroundColor: '#f9f9f9' }}>
+    <nav style={{ padding: '10px', borderBottom: '1px solid #ccc', backgroundColor: '#f9f9f9', display: 'flex', justifyContent: 'space-between' }}>
       <Link to="/" style={linkStyle}>Home</Link>
       <Link to="/about" style={linkStyle}>About</Link>
       <Link to="/services" style={linkStyle}>Services</Link>
