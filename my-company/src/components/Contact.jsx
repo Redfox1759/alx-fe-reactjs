@@ -8,13 +8,12 @@ function Contact() {
   });
 
   const handleChange = (e) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     alert('Form submitted!');
-    setFormData({ name: '', email: '', message: '' });
   };
 
   return (
@@ -27,8 +26,7 @@ function Contact() {
           placeholder="Your Name"
           value={formData.name}
           onChange={handleChange}
-          style={{ display: 'block', margin: '10px 0', padding: '5px', width: '300px' }}
-          required
+          style={{ display: 'block', margin: '10px 0' }}
         />
         <input
           type="email"
@@ -36,18 +34,16 @@ function Contact() {
           placeholder="Your Email"
           value={formData.email}
           onChange={handleChange}
-          style={{ display: 'block', margin: '10px 0', padding: '5px', width: '300px' }}
-          required
+          style={{ display: 'block', margin: '10px 0' }}
         />
         <textarea
           name="message"
           placeholder="Your Message"
           value={formData.message}
           onChange={handleChange}
-          style={{ display: 'block', margin: '10px 0', padding: '5px', width: '300px', height: '100px' }}
-          required
+          style={{ display: 'block', margin: '10px 0' }}
         />
-        <button type="submit" style={{ padding: '8px 16px' }}>Send Message</button>
+        <button type="submit">Send Message</button>
       </form>
     </div>
   );
