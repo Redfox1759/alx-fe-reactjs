@@ -81,20 +81,20 @@ const Search = () => {
         </button>
       </form>
 
-      {loading && <p >Loading...</p>}
-      {error && <p >{error}</p>}
+      {loading && <p className="text-center text-gray-500 mt-4">Loading...</p>}
+      {error && <p className="text-red-500 text-center mt-4">{error}</p>}
 
       {users.length > 0 && (
-        <div>
-          <h3>Results ({totalCount} found):</h3>
+        <div className="mt-6">
+          <h3 className="text-lg font-semibold mb-2">Results ({totalCount} found):</h3>
           <ul className="space-y-4">
             {users.map((user) => (
-              <li key={user.id}>
-                <img src={user.avatar_url} alt={user.login} />
+              <li key={user.id} className="p-4 border rounded flex items-center space-x-4">
+                <img src={user.avatar_url} alt={user.login} className="w-16 h-16 rounded-full" />
                 <div>
-                  <h4 >{user.login}</h4>
+                  <h4 className="text-lg font-semibold">{user.login}</h4>
                   <p>
-                    <a href={user.html_url} target="_blank" rel="noopener noreferrer" >
+                    <a href={user.html_url} target="_blank" rel="noopener noreferrer" className="text-blue-500">
                       View Profile
                     </a>
                   </p>
@@ -104,7 +104,7 @@ const Search = () => {
           </ul>
 
           {users.length < totalCount && (
-            <button onClick={loadMore} >
+            <button onClick={loadMore} className="w-full mt-4 bg-green-500 text-white p-2 rounded hover:bg-green-700">
               Load More
             </button>
           )}
